@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Moment with Life Oyewunmi | Professional Dining & Social Etiquette</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        @keyframes float {
+        0%, 100% {
+        transform: translateY(0);
+        }
+        50% {
+        transform: translateY(-8px);
+        }
+        }
+
+        .animate-float {
+        animation: float 2.5s ease-in-out infinite;
+        }
+
+        :root {
+            --brand-color: #d91c5c;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .brand-color {
+            color: var(--brand-color);
+        }
+        
+        .brand-bg {
+            background-color: var(--brand-color);
+        }
+        
+        /* Scroll animation classes */
+        .scroll-element {
+            opacity: 0;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in {
+            transform: translateY(30px);
+        }
+        
+        .slide-in-left {
+            transform: translateX(-50px);
+        }
+        
+        .slide-in-right {
+            transform: translateX(50px);
+        }
+        
+        .zoom-in {
+            transform: scale(0.9);
+        }
+        
+        .scroll-element.visible {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+        
+        /* Header styles */
+        .mobile-header {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/bg-mobile-header.jpg');
+            background-size: cover;
+            padding: 20px;
+            background-position: center;
+            height: 70vh;
+        }
+        
+        .desktop-header {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./images/bg-desktop-header.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+        
+        /* Gallery styles */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Loading animation */
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        
+        .loading {
+            animation: pulse 1.5s infinite;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .mobile-header {
+                height: 60vh;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Loading Screen -->
+    
+
+    <!-- Header Section -->
+    <header class="relative">
+        <!-- Mobile Header -->
+        <div class="md:hidden mobile-header flex flex-col justify-between">
+            <div class="p-4">
+                <!-- Logo -->
+                <div class="scroll-element fade-in flex items-center">
+                    <div class="rounded-full brand-bg flex items-center justify-center text-white font-bold text-xl">
+                       <img width="60" src="./images/logo.png" alt="">
+                    </div>
+                    <!-- <span class="ml-2 text-white font-bold text-xl">Moment with Life</span> -->
+                </div>
+            </div>
+            <div class="p-4 text-white text-center">
+                <h1 class="text-3xl font-bold mb-2 scroll-element fade-in">THE EXECUTIVE EDGE</h1>
+                <p class="text-lg scroll-element fade-in" style="transition-delay: 0.2s"> Professional Care, Workplace Etiquette & Support Skills That Set You Apart</p>
+            </div>
+        </div>
+        
+        <!-- Desktop Header -->
+        <div class="hidden md:block desktop-header">
+            <div class="container mx-auto px-6 py-4">
+                <!-- Logo -->
+                <div class="scroll-element fade-in flex items-center">
+                   <div class="rounded-full brand-bg flex items-center justify-center text-white font-bold text-xl">
+                       <img width="80" src="./images/logo.png" alt="">
+                    </div>
+                    <!-- <span class="ml-3 text-white font-bold text-2xl">Moment with Life</span> -->
+                </div>
+            </div>
+            <div class="container mx-auto px-6 flex items-center justify-center h-3/4">
+                <div class="text-white text-center max-w-3xl">
+                    <h1 class="text-5xl font-bold mb-4 scroll-element fade-in">THE EXECUTIVE EDGE</h1>
+                    <p class="text-xl scroll-element fade-in" style="transition-delay: 0.2s">Professional Care, Workplace Etiquette & Support Skills That Set You Apart...</p>
+                </div>
+            </div>
+        </div>
+             
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 md:px-8">
+        <div class="container text-center mx-auto max-w-4xl">
+            <div class="scroll-element fade-in">
+
+                
+
+
+                <h1 class="text-4xl md:text-5xl font-bold text-center mb-8 brand-color">Moment with Life Oyewunmi</h1>
+                <div class="text-lg md:text-xl text-gray-700 leading-relaxed space-y-4">
+                    <p class="scroll-element fade-in" style="transition-delay: 0.1s">Life Oyewunmi is a globally trained Hospitality and Etiquette Professional with a deep commitment to service excellence, leadership ethics, and personal growth. She is the founder of Moments with Life (MOL) a lifestyle project 
+dedicated to inspiring excellence, character, and purpose-driven leadership. MOL has a division of Event Management, Ushering Services and Luxury Gifting Services. 
+</p>
+                    <p class="scroll-element fade-in" style="transition-delay: 0.2s">Trained at esteemed institutions including Culinary Arts presented by The Corporate School of Etiquette (Savannah, Georgia, USA), Elocution, Etiquette and Ethics Academy (Nigeria), and Emma Dupont School of Etiquette (London). 
+Life Oyewunmi also holds a B.Sc. in Accountancy from Redeemer's University, Nigeria. She is certified in CPR and First Aid by the American Heart Association and TAG Global Training, London.
+Life Oyewunmi reflects a well-rounded commitment to excellence and responsibility.
+She is known for her exceptional work in Green Room management, high-impact mentoring, and corporate training, equipping professionals with the skills and ethical grounding needed to thrive. 
+She is a Fellow of the Chartered Institute of Mentoring and Coaching Nigeria (CIMCN).</p>
+                    <p class="scroll-element fade-in" style="transition-delay: 0.3s">She currently serves as Head of CSR for RCCG PSF and leads the Executive Care Unit. She is a proud member of Women in Hospitality, Nigeria. She is married to Oluwafemi Oyewunmi, a financial analyst, and they are blessed with a daughter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-50 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 brand-color scroll-element fade-in"> Gallery </h2>
+            
+            <div class="gallery-container">
+                <!-- Gallery Items with staggered animation -->
+                <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.1s">
+                    <img src="images/profile1.jpeg" alt="Event 1">
+                </div>
+                <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.2s">
+                    <img src="images/profile2.jpeg" alt="Event 3">
+                </div>
+                <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.3s">
+                    <img src="images/profile3.jpeg" alt="Event 5">
+                </div>
+                <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.35s">
+                    <img src="images/profile6.jpeg" alt="Event 6">
+                </div>
+                <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.4s">
+                    <img src="images/profile8.jpeg" alt="Event 7">
+                </div>
+                 <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.4s">
+                    <img src="images/profile7.png" alt="Event 7">
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Event & Registration Section -->
+    <section id="registration" class="py-16 px-4 md:px-8">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Event Image -->
+                <div class="scroll-element slide-in-left">
+                    <div class="rounded-xl overflow-hidden shadow-lg">
+                        <img src="images/flier.jpeg" alt="Event Image" class="w-full h-auto">
+                    </div>
+                </div>
+                
+                <!-- Registration Form -->
+                <div class="scroll-element slide-in-right">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                        <h2 class="text-3xl font-bold mb-6 brand-color">Register Now</h2>
+                        
+                        <!-- Training Description -->
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-4 scroll-element fade-in">A Premium Practical Training for Executive Enablers;</h3>
+                            <p class="text-lg mb-4 font-semibold scroll-element fade-in" style="transition-delay: 0.1s">Secretaries • Personal Assistants • Front Desk Officers • Executive Support Professionals and Administrators.</p>
+                            
+                            <h4 class="text-xl font-bold mt-6 mb-3 brand-color scroll-element fade-in" style="transition-delay: 0.2s">What you will learn ;</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li class="scroll-element fade-in" style="transition-delay: 0.25s">Executive support techniques that add real value</li>
+                                <li class="scroll-element fade-in" style="transition-delay: 0.3s">The Art of Professional / Boss Care</li>
+                                <li class="scroll-element fade-in" style="transition-delay: 0.35s">Practical Office Etiquette</li>
+                                <li class="scroll-element fade-in" style="transition-delay: 0.4s">Professional Hospitality in the workplace</li>
+                                <li class="scroll-element fade-in" style="transition-delay: 0.45s">Personality Management</li>
+                                <li class="scroll-element fade-in" style="transition-delay: 0.5s">Hands-on Tea Service presentation</li>
+                            </ul>
+                            
+                            <h4 class="text-xl font-bold mt-6 mb-3 brand-color scroll-element fade-in" style="transition-delay: 0.55s">Training covers;</h4>
+                            <ul class="list-disc pl-5 space-y-2">
+                                 <li class="scroll-element fade-in" style="transition-delay: 0.6s">Full Tea & Coffee Break</li>
+                                 <li class="scroll-element fade-in" style="transition-delay: 0.65s">Networking session</li>
+                                 <li class="scroll-element fade-in" style="transition-delay: 0.7s">Certificate of Participation</li>
+                            </ul>
+                            
+                            <div class="mt-6">
+                                <p class="font-semibold scroll-element fade-in" style="transition-delay: 0.75s">Date: <span class="font-normal">SAT, April 4th 2026</span></p>
+                                <p class="font-semibold scroll-element fade-in" style="transition-delay: 0.8s">Time: <span class="font-normal">11AM</span></p>
+                                <p class="font-semibold scroll-element fade-in" style="transition-delay: 0.85s">Location: <span class="font-normal">MARRIOTT, IKEJA.</span></p>
+                            </div>
+                        </div>
+                        
+                        <!-- Pricing -->
+                        <div class="mb-8">
+                            <h3 class="text-xl font-bold mb-4 brand-color scroll-element fade-in">Investment</h3>
+                            <div class="space-y-3">
+                                <p class="text-lg scroll-element fade-in" style="transition-delay: 0.1s">Individual: <span class="font-bold">₦100,000</span></p>
+                            </div>
+                            
+                            <div class="mt-4 p-4 bg-gray-50 rounded-lg scroll-element fade-in" style="transition-delay: 0.2s">
+                                <p class="font-semibold">Make payment to:</p>
+                                <p class="mt-1">Access Bank</p>
+                                <p class="font-bold">0031640334</p>
+                                <p class="font-bold">Life Oyewunmi</p>
+
+                            </div>
+                        </div>
+                        
+                       <div>
+                    <a href="https://rebrand.ly/DineWithLife" target="_blank">
+                        <button 
+                        type="button" 
+                        class="w-full brand-bg text-white py-3 rounded-lg font-semibold text-lg hover:bg-pink-700 transition duration-300 scroll-element fade-in animate-float"
+                        style="transition-delay: 0.3s"
+                        >
+                        Proceed to register...
+                        </button>
+                    </a>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuggets Section -->
+    <section id="nuggets" class="py-16 bg-gray-50 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg">
+                <i class="fas fa-bolt text-5xl brand-color mb-6 scroll-element zoom-in"></i>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 brand-color scroll-element fade-in">Step into your role with confidence.</h2>
+                <p class="text-2xl mb-8 scroll-element fade-in font-semibold" style="transition-delay: 0.1s">Become the professional every executive trusts and respects.</p>
+                
+                <div class="space-y-4 text-lg">
+                    <p class="scroll-element fade-in" style="transition-delay: 0.2s">For inquiries, contact us at:</p>
+                    <p class="font-semibold scroll-element fade-in" style="transition-delay: 0.25s">Momentwithlife@gmail.com</p>
+                    <p class="font-semibold scroll-element fade-in" style="transition-delay: 0.3s">Call: +234 814 446 8331</p>
+                    <p class="font-semibold scroll-element fade-in" style="transition-delay: 0.35s">WhatsApp: +234 813 630 3848</p>
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-gray-200">
+                    <p class="text-2xl font-bold brand-color scroll-element fade-in" style="transition-delay: 0.4s">We look forward to hosting you!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="scroll-element fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="rounded-full brand-bg flex items-center justify-center text-white font-bold text-xl">
+                       <img width="80" src="./images/logo.png" alt="">
+                    </div>
+                        <span class="ml-2 font-bold text-xl">Moment with Life</span>
+                    </div>
+                    <p class="text-gray-300">Elevating professional excellence, workplace etiquette and personal growth through world-class training.</p>
+                </div>
+                
+                <div class="scroll-element fade-in" style="transition-delay: 0.1s">
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition">About</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-white transition">Gallery</a></li>
+                        <li><a href="#registration" class="text-gray-300 hover:text-white transition">Registration</a></li>
+                    </ul>
+                </div>
+                
+                <div class="scroll-element fade-in" style="transition-delay: 0.2s">
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/lady_lifey/" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:brand-bg transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.instagram.com/lady_lifey/" >
+                            @lady_lifey
+                        </a>
+                    
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 scroll-element fade-in">
+                <p>&copy; 2023 Moment with Life. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced scroll animation with Intersection Observer
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loading screen after page loads
+            setTimeout(function() {
+                document.getElementById('loadingScreen').style.display = 'none';
+            }, 1500);
+            
+            // Set up scroll animation observer
+            const scrollElements = document.querySelectorAll('.scroll-element');
+            
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (
+                    elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+                );
+            };
+            
+            const displayScrollElement = (element) => {
+                element.classList.add('visible');
+            };
+            
+            const hideScrollElement = (element) => {
+                element.classList.remove('visible');
+            };
+            
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.2)) {
+                        displayScrollElement(el);
+                    } else {
+                        // Optional: hide elements when they scroll out of view
+                        // hideScrollElement(el);
+                    }
+                });
+            };
+            
+            // Initialize - check elements on page load
+            window.addEventListener('load', () => {
+                handleScrollAnimation();
+            });
+            
+            // Listen for scroll events
+            window.addEventListener('scroll', () => {
+                handleScrollAnimation();
+            });
+            
+            // Form submission handler
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Scroll to confirmation section
+                    document.getElementById('confirmation').scrollIntoView({ 
+                        behavior: 'smooth' 
+                    });
+                    
+                    // You would typically send form data to a server here
+                    // For demo purposes, we're just showing the confirmation
+                });
+            }
+        });
+    </script>
+</body>
+</html>

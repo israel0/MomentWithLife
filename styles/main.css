@@ -1,0 +1,134 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        @keyframes float {
+        0%, 100% {
+        transform: translateY(0);
+        }
+        50% {
+        transform: translateY(-8px);
+        }
+        }
+
+        .animate-float {
+        animation: float 2.5s ease-in-out infinite;
+        }
+
+        :root {
+            --brand-color: #d91c5c;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .brand-color {
+            color: var(--brand-color);
+        }
+        
+        .brand-bg {
+            background-color: var(--brand-color);
+        }
+        
+        /* Scroll animation classes */
+        .scroll-element {
+            opacity: 0;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in {
+            transform: translateY(30px);
+        }
+        
+        .slide-in-left {
+            transform: translateX(-50px);
+        }
+        
+        .slide-in-right {
+            transform: translateX(50px);
+        }
+        
+        .zoom-in {
+            transform: scale(0.9);
+        }
+        
+        .scroll-element.visible {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+        
+        /* Header styles */
+        .mobile-header {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/bg-mibheader.jpg');
+            background-size: cover;
+            padding: 20px;
+            background-position: center;
+            height: 70vh;
+        }
+        
+        .desktop-header {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./images/bg-desktop-header.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+        
+        /* Gallery styles */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Loading animation */
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        
+        .loading {
+            animation: pulse 1.5s infinite;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .mobile-header {
+                height: 60vh;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Moment with Lifegram | Professional Dining & Social Etiquette</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --brand-color: #d91c5c;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .brand-color {
+            color: var(--brand-color);
+        }
+        
+        .brand-bg {
+            background-color: var(--brand-color);
+        }
+        
+        /* Scroll animation classes */
+        .scroll-element {
+            opacity: 0;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in {
+            transform: translateY(30px);
+        }
+        
+        .slide-in-left {
+            transform: translateX(-50px);
+        }
+        
+        .slide-in-right {
+            transform: translateX(50px);
+        }
+        
+        .zoom-in {
+            transform: scale(0.9);
+        }
+        
+        .scroll-element.visible {
+            opacity: 1;
+            transform: translate(0) scale(1);
+        }
+        
+        /* Header styles */
+        .mobile-header {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/bg-header.png');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+        }
+        
+        .desktop-header {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./images/bg-header.png');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+        
+        /* Gallery styles */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Loading animation */
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        
+        .loading {
+            animation: pulse 1.5s infinite;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .mobile-header {
+                height: 60vh;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Loading Screen -->
+    
+
+    <!-- Header Section -->
+    <header class="relative">
+        <!-- Mobile Header -->
+        <div class="md:hidden mobile-header flex flex-col justify-between">
+            <div class="p-4">
+                <!-- Logo -->
+                <div class="scroll-element fade-in flex items-center">
+                    <div class="rounded-full brand-bg flex items-center justify-center text-white font-bold text-xl">
+                       <img width="80" src="./images/logo.png" alt="">
+                    </div>
+                    <!-- <span class="ml-2 text-white font-bold text-xl">Moment with Life</span> -->
+                </div>
+            </div>
+            <div class="p-4 text-white text-center">
+                <h1 class="text-3xl font-bold mb-2 scroll-element fade-in">Fine Dining & Social Etiquette</h1>
+                <p class="text-lg scroll-element fade-in" style="transition-delay: 0.2s">Master the art of elegant dining and social grace</p>
+            </div>
+        </div>
+        
+        <!-- Desktop Header -->
+        <div class="hidden md:block desktop-header">
+            <div class="container mx-auto px-6 py-4">
+                <!-- Logo -->
+                <div class="scroll-element fade-in flex items-center">
+                   <div class="rounded-full brand-bg flex items-center justify-center text-white font-bold text-xl">
+                       <img width="80" src="./images/logo.png" alt="">
+                    </div>
+                    <!-- <span class="ml-3 text-white font-bold text-2xl">Moment with Life</span> -->
+                </div>
+            </div>
+            <div class="container mx-auto px-6 flex items-center justify-center h-3/4">
+                <div class="text-white text-center max-w-3xl">
+                    <h1 class="text-5xl font-bold mb-4 scroll-element fade-in">Fine Dining & Social Etiquette</h1>
+                    <p class="text-xl scroll-element fade-in" style="transition-delay: 0.2s">Master the art of elegant dining and social grace in our exclusive global program</p>
+                </div>
+            </div>
+        </div>
+             
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 md:px-8">
+        <div class="container text-center mx-auto max-w-4xl">
+            <div class="scroll-element fade-in">
+
+                
+
+
+                <h1 class="text-4xl md:text-5xl font-bold text-center mb-8 brand-color">Global Moment with Lifegram</h1>
+                <div class="text-lg md:text-xl text-gray-700 leading-relaxed space-y-4">
+                    <p class="scroll-element fade-in" style="transition-delay: 0.1s">Life Oyewunmi is a globally trained Hospitality and Etiquette Professional with a deep commitment to service excellence, leadership ethics, and personal growth. She is the founder of Moments with Life (MOL) a lifestyle project 
+dedicated to inspiring excellence, character, and purpose-driven leadership. MOL also has a division of an Ushering Services we provide and a Luxury Gifting Services. 
+</p>
+                    <p class="scroll-element fade-in" style="transition-delay: 0.2s">Trained at esteemed institutions including Culinary Arts presented by The Corporate School of Etiquette (Savannah, Georgia, USA), Elocution, Etiquette and Ethics Academy (Nigeria), and Emma Dupont School of Etiquette (London). 
+Life Oyewunmi also holds a B.Sc. in Accountancy from Redeemer’s University, Nigeria. She is certified in CPR and First Aid by the American Heart Association and TAG Global Training, London.
+Life Oyewunmi reflects a well-rounded commitment to excellence and responsibility.
+She is known for her exceptional work in Green Room management, high-impact mentoring, and corporate training, equipping professionals with the skills and ethical grounding needed to thrive. 
+</p>
+                    <p class="scroll-element fade-in" style="transition-delay: 0.3s">She currently serves as Head of CSR for RCCG P SF and leads the Executive Care Unit. She is a proud member of Women in Hospitality, Nigeria. She is married to Oluwafemi Oyewunmi, a financial analyst, and they are blessed with a daughter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-50 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 brand-color scroll-element fade-in">Past Events Gallery</h2>
+            
+            <div class="gallery-container">
+                <!-- Gallery Items with staggered animation -->
+                <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.1s">
+                    <img src="images/profile5.jpeg" alt="Event 1">
+                </div>
+                <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.15s">
+                    <img src="images/profile6.jpeg" alt="Event 2">
+                </div>
+                <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.2s">
+                    <img src="images/profile3.jpeg" alt="Event 3">
+                </div>
+                <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.25s">
+                    <img src="images/profile4.jpeg" alt="Event 4">
+                </div>
+                <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.3s">
+                    <img src="images/profile1.jpeg" alt="Event 5">
+                </div>
+                <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.35s">
+                    <img src="images/profile2.jpeg" alt="Event 6">
+                </div>
+                <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.4s">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Event 7">
+                </div>
+                <div class="gallery-item scroll-element zoom-in" style="transition-delay: 0.45s">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Event 8">
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Event & Registration Section -->
+    <section id="registration" class="py-16 px-4 md:px-8">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Event Image -->
+                <div class="scroll-element slide-in-left">
+                    <div class="rounded-xl overflow-hidden shadow-lg">
+                        <img src="images/flier.jpeg" alt="Event Image" class="w-full h-auto">
+                    </div>
+                </div>
+                
+                <!-- Registration Form -->
+                <div class="scroll-element slide-in-right">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                        <h2 class="text-3xl font-bold mb-6 brand-color">Register Now</h2>
+                        
+                        <!-- Welcome Message -->
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-4 scroll-element fade-in">Welcome!</h3>
+                            <p class="text-lg mb-4 scroll-element fade-in" style="transition-delay: 0.1s">Now, it's your turn. We are excited to have you join us for an enriching experience focused on Fine dining and Social etiquette that will elevate you.</p>
+                            <div class="flex items-center mb-2 scroll-element fade-in" style="transition-delay: 0.2s">
+                                <i class="fas fa-star brand-color mr-2"></i>
+                                <span>Walk in unsure.</span>
+                            </div>
+                            <div class="flex items-center scroll-element fade-in" style="transition-delay: 0.3s">
+                                <i class="fas fa-star brand-color mr-2"></i>
+                                <span>Walk out unforgettable.</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Details -->
+                        <div class="mb-8">
+                            <h3 class="text-xl font-bold mb-4 brand-color scroll-element fade-in">What's Included</h3>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li class="scroll-element fade-in" style="transition-delay: 0.1s">Full fine dining meal (3 course)</li>
+                                <li class="scroll-element fade-in" style="transition-delay: 0.15s">Live etiquette instruction</li>
+                                <li class="scroll-element fade-in" style="transition-delay: 0.2s">Do's and don'ts of modern etiquette</li>
+                                <li class="scroll-element fade-in" style="transition-delay: 0.25s">Social Charisma</li>
+                                <li class="scroll-element fade-in" style="transition-delay: 0.3s">Certificate of completion</li>
+                                <li class="scroll-element fade-in" style="transition-delay: 0.35s">Networking opportunities</li>
+                            </ul>
+                            
+                            <div class="mt-6">
+                                <p class="font-semibold scroll-element fade-in" style="transition-delay: 0.4s">Dress Code: <span class="font-normal">Smart</span></p>
+                                <p class="font-semibold scroll-element fade-in" style="transition-delay: 0.45s">Date: <span class="font-normal">Saturday November 8, 2025</span></p>
+                                <p class="font-semibold scroll-element fade-in" style="transition-delay: 0.5s">Time: <span class="font-normal">1pm to 4pm</span></p>
+                                <p class="font-semibold scroll-element fade-in" style="transition-delay: 0.55s">Location: <span class="font-normal">Ikeja</span></p>
+                            </div>
+                        </div>
+                        
+                        <!-- Pricing -->
+                        <div class="mb-8">
+                            <h3 class="text-xl font-bold mb-4 brand-color scroll-element fade-in">Investment</h3>
+                            <div class="space-y-3">
+                                <p class="text-lg scroll-element fade-in" style="transition-delay: 0.1s">Individual: <span class="font-bold">₦75,000</span></p>
+                                <p class="text-lg scroll-element fade-in" style="transition-delay: 0.15s">Group of 3: <span class="font-bold">₦190,000</span></p>
+                                <p class="text-lg scroll-element fade-in" style="transition-delay: 0.2s">Group of 5: <span class="font-bold">₦340,000</span></p>
+                            </div>
+                            
+                            <div class="mt-4 p-4 bg-gray-50 rounded-lg scroll-element fade-in" style="transition-delay: 0.25s">
+                                <p class="font-semibold">Make payment to:</p>
+                                <p class="mt-1">Access Bank</p>
+                                <p class="font-bold">0031640334</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Registration Form -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 brand-color scroll-element fade-in">Registration Form</h3>
+                            <form class="space-y-4">
+                                <div class="scroll-element fade-in" style="transition-delay: 0.1s">
+                                    <label class="block text-gray-700 mb-2" for="fullName">Full Name</label>
+                                    <input type="text" id="fullName" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
+                                </div>
+                                
+                                <div class="scroll-element fade-in" style="transition-delay: 0.15s">
+                                    <label class="block text-gray-700 mb-2" for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
+                                </div>
+                                
+                                <div class="scroll-element fade-in" style="transition-delay: 0.2s">
+                                    <label class="block text-gray-700 mb-2" for="email">Email Address</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
+                                </div>
+                                
+                                <div class="scroll-element fade-in" style="transition-delay: 0.25s">
+                                    <label class="block text-gray-700 mb-2" for="workStatus">Work Status</label>
+                                    <select id="workStatus" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
+                                        <option value="">Select your work status</option>
+                                        <option value="employed">Employed</option>
+                                        <option value="self-employed">Self-Employed</option>
+                                        <option value="student">Student</option>
+                                        <option value="unemployed">Unemployed</option>
+                                        <option value="retired">Retired</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="scroll-element fade-in" style="transition-delay: 0.3s">
+                                    <label class="block text-gray-700 mb-2" for="hearAbout">How did you hear about this workshop?</label>
+                                    <input type="text" id="hearAbout" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
+                                </div>
+                                
+                                <div class="scroll-element fade-in" style="transition-delay: 0.35s">
+                                    <label class="block text-gray-700 mb-2">Have you attended a similar workshop before?</label>
+                                    <div class="flex space-x-4 mt-2">
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="previousWorkshop" value="yes" class="text-pink-500 focus:ring-pink-500">
+                                            <span class="ml-2">Yes</span>
+                                        </label>
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="previousWorkshop" value="no" class="text-pink-500 focus:ring-pink-500">
+                                            <span class="ml-2">No</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="scroll-element fade-in" style="transition-delay: 0.4s">
+                                    <label class="block text-gray-700 mb-2" for="expectations">What are you hoping to gain from this workshop?</label>
+                                    <textarea id="expectations" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
+                                </div>
+                                
+                                <div class="scroll-element fade-in" style="transition-delay: 0.45s">
+                                    <label class="block text-gray-700 mb-2" for="dietary">Any dietary restrictions or allergies we should be aware of?</label>
+                                    <textarea id="dietary" rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
+                                </div>
+                                
+                                <div class="scroll-element fade-in" style="transition-delay: 0.5s">
+                                    <label class="block text-gray-700 mb-2" for="comments">Questions or Comments</label>
+                                    <textarea id="comments" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full brand-bg text-white py-3 rounded-lg font-semibold text-lg hover:bg-pink-700 transition duration-300 scroll-element fade-in" style="transition-delay: 0.55s">Submit Registration</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmation Section -->
+    <section id="confirmation" class="py-16 bg-gray-50 px-4">
+        <div class="container mx-auto max-w-3xl text-center">
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg">
+                <i class="fas fa-check-circle text-5xl brand-color mb-6 scroll-element zoom-in"></i>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 brand-color scroll-element fade-in">Thank you for registering!</h2>
+                <p class="text-xl mb-8 scroll-element fade-in" style="transition-delay: 0.1s">You'll receive a confirmation email shortly.</p>
+                
+                <div class="space-y-4 text-lg">
+                    <p class="scroll-element fade-in" style="transition-delay: 0.2s">For inquiries, contact us at:</p>
+                    <p class="font-semibold scroll-element fade-in" style="transition-delay: 0.25s">Momentwithlife@gmail.com</p>
+                    <p class="font-semibold scroll-element fade-in" style="transition-delay: 0.3s">Call: +234 814 446 8331</p>
+                    <p class="font-semibold scroll-element fade-in" style="transition-delay: 0.35s">WhatsApp: +234 813 630 3848</p>
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-gray-200">
+                    <p class="text-2xl font-bold brand-color scroll-element fade-in" style="transition-delay: 0.4s">We look forward to dining with you in style!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="scroll-element fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="rounded-full brand-bg flex items-center justify-center text-white font-bold text-xl">
+                       <img width="80" src="./images/logo.png" alt="">
+                    </div>
+                        <span class="ml-2 font-bold text-xl">Moment with Life</span>
+                    </div>
+                    <p class="text-gray-300">Elevating social grace and dining etiquette worldwide through professional training and immersive experiences.</p>
+                </div>
+                
+                <div class="scroll-element fade-in" style="transition-delay: 0.1s">
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition">About</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-white transition">Gallery</a></li>
+                        <li><a href="#registration" class="text-gray-300 hover:text-white transition">Registration</a></li>
+                    </ul>
+                </div>
+                
+                <div class="scroll-element fade-in" style="transition-delay: 0.2s">
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:brand-bg transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:brand-bg transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:brand-bg transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:brand-bg transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 scroll-element fade-in">
+                <p>&copy; 2023 Moment with Life. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced scroll animation with Intersection Observer
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loading screen after page loads
+            setTimeout(function() {
+                document.getElementById('loadingScreen').style.display = 'none';
+            }, 1500);
+            
+            // Set up scroll animation observer
+            const scrollElements = document.querySelectorAll('.scroll-element');
+            
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (
+                    elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+                );
+            };
+            
+            const displayScrollElement = (element) => {
+                element.classList.add('visible');
+            };
+            
+            const hideScrollElement = (element) => {
+                element.classList.remove('visible');
+            };
+            
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.2)) {
+                        displayScrollElement(el);
+                    } else {
+                        // Optional: hide elements when they scroll out of view
+                        // hideScrollElement(el);
+                    }
+                });
+            };
+            
+            // Initialize - check elements on page load
+            window.addEventListener('load', () => {
+                handleScrollAnimation();
+            });
+            
+            // Listen for scroll events
+            window.addEventListener('scroll', () => {
+                handleScrollAnimation();
+            });
+            
+            // Form submission handler
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Scroll to confirmation section
+                    document.getElementById('confirmation').scrollIntoView({ 
+                        behavior: 'smooth' 
+                    });
+                    
+                    // You would typically send form data to a server here
+                    // For demo purposes, we're just showing the confirmation
+                });
+            }
+        });
+    </script>
+</body>
+</html>
